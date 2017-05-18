@@ -34,6 +34,8 @@ void *laserThread(void *arg)  {
 	 pthread_exit (NULL);
 }
 
+
+
 //-----------------------------------------------------------------------------------------------
 //  static void signalrmHandler(int sig)
 //
