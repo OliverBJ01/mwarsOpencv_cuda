@@ -20,8 +20,8 @@
 
 #include <iostream>
 #include <sstream>
-#include <time.h>
-#include <stdio.h>
+//#include <time.h>
+//#include <stdio.h>
 
 #include <opencv2/core.hpp>
 #include <opencv2/core/utility.hpp>
@@ -249,7 +249,7 @@ enum { DETECTION = 0, CAPTURING = 1, CALIBRATED = 2 };
 bool runCalibrationAndSave(Settings& s, Size imageSize, Mat&  cameraMatrix, Mat& distCoeffs,
                            vector<vector<Point2f> > imagePoints );
 
-int main(int argc, char* argv[])
+int mainz(int argc, char* argv[])
 {
     help();
 

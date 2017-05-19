@@ -151,18 +151,19 @@ int main(int argc, char** argv)
 	   return 1;
    if (getCameraCalibrationData(cameraMatrix, distCoeffs) )	 	// load camera intrinsics files
 	   return 1;
-   if ( initSocket())	    											// socket: UDP packets to scanner Console app
+   if ( initSocket())	    									// socket: UDP packets to scanner Console app
 	   return 1;
    if (initLaserEnableTimer())
 	   return 1;
 
-   tickCount = (double)getTickCount();								// start timer for frame rate timing
+   tickCount = (double)getTickCount();							// start timer for frame rate timing
 
-   if (cameraCapture (cap, "IP", 0, IPCAM_STREAMADDRESS, frameWidth, frameHeight ))    // establish videocapture with USB or IP camera
+    // IP  USB
+   if (cameraCapture (cap, "USB", 0, IPCAM_STREAMADDRESS, frameWidth, frameHeight ))    // establish videocapture with USB or IP camera
 	   return 1;
    cap >> frame;
 
-   imgLabel = cvCreateImage(frame.size(), IPL_DEPTH_LABEL, 1);		// for cvLabel later
+   imgLabel = cvCreateImage(frame.size(), IPL_DEPTH_LABEL, 1);	// for cvLabel later
 
    Ptr<BackgroundSubtractorMOG2> bg_model = createBackgroundSubtractorMOG2();
    bg_model->setVarThreshold(10);
@@ -338,6 +339,7 @@ int main(int argc, char** argv)
 					 // Point r_max = Point (iterMax->second->maxx, iterMax->second->maxy);
 					  //cvRectangle (&iplFrame,  r_min, r_max,  CV_RGB(0,255,0), 3, 8 );
 
+                // shown the target in a window
 					  namedWindow ("gekkoWindow", WINDOW_NORMAL);
 
 					  // 10 pixel border, but exceeding frame is bad

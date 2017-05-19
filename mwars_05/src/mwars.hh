@@ -65,11 +65,11 @@ using namespace std;		// std library
 using namespace cv;			// opencv
 
 // xml file with the camera calibration matrices previously saved by CameraCalibration App
-#define CAMCALFILE "/home/bernard/workspace_eclipse/cameraCalibrate/out_camera_data.xml"
+#define CAMCALFILE "/home/bernard/ws/mwarsOpencv/cameraCalibrate/out_camera_data.xml"
 
 // IP cam stream addresses
-#define IPCAM_STREAMADDRESS "http://root:Isabel00@10.1.1.69/mjpg/video.mjpg"	//Axis IP Camera @ Port 80
-//   #define IPCAM_STREAMADDRESS "http://admin:Isabel00@10.1.1.5/video.cgi?.mjpg"  	// D-Link IP camera @ Port 80
+//#define IPCAM_STREAMADDRESS "http://root:Isabel00@10.1.1.5/mjpg/video.mjpg"	//Axis IP Camera @ Port 80
+#define IPCAM_STREAMADDRESS "http://admin:Isabel00@10.1.1.5/video.cgi?.mjpg"  	// D-Link IP camera @ Port 80
 
 #define LOGFILE "tracklog_01.txt"
 
